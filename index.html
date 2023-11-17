@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  body{
+  margin-left:30px;
+  background-color:#333;
+  }
+    img{
+      width:100%;
+      height:100%;
+      border-radius: 8px;
+    }
+
+    .giii {
+    margin:10px;
+     display:inline-block;
+      width: 270px;
+      height: 200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition:0.5s;
+      border:1px solid white;
+    }
+    .giii:hover{
+    transform:scale(1.1);
+    }
+    .giii img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+  </style>
+</head>
+<body>
+<h1 style="color:white;"><b><u>MICROINTEL IMAGE RESOURCES</u></b></h1><br>
+<div id="imag"></div>
+
+<script>
+  const imageS = [
+    'https://microintel.github.io/Resources/images/Baby_groot.jpg',
+    'https://microintel.github.io/Resources/images/DBMI.png',
+    'https://microintel.github.io/Resources/images/DTE.jpg',
+    'https://microintel.github.io/Resources/images/DTECH.jpg',
+    'https://microintel.github.io/Resources/images/Github.jpg',
+    'https://microintel.github.io/Resources/images/MCU.jpg',
+    'https://microintel.github.io/Resources/images/MICROINTEL_GT.png',
+    'https://microintel.github.io/Resources/images/MICROINTEL TOOTHPASTE.jpg',
+    'https://microintel.github.io/Resources/images/Microintel1.jpg',
+    'https://microintel.github.io/Resources/images/WhatsApp.png',
+    'https://microintel.github.io/Resources/images/babygrrot.jpg',
+    'https://microintel.github.io/Resources/images/call.png',
+    'https://microintel.github.io/Resources/images/ceo.jpg',
+    'https://microintel.github.io/Resources/images/client.jpg',
+    'https://microintel.github.io/Resources/images/dbmil1.png',
+    'https://microintel.github.io/Resources/images/dwn.png',
+    'https://microintel.github.io/Resources/images/giphy.gif',
+    'https://microintel.github.io/Resources/images/gmail.png',
+    'https://microintel.github.io/Resources/images/group.jpg',
+    'https://microintel.github.io/Resources/images/home.gif',
+    'https://microintel.github.io/Resources/images/house.gif',
+    'https://microintel.github.io/Resources/images/insta.png',
+    'https://microintel.github.io/Resources/images/house.png',
+    'https://microintel.github.io/Resources/images/loop.gif',
+    'https://microintel.github.io/Resources/images/lout.png',
+    'https://microintel.github.io/Resources/images/mdisk.jpg',
+    'https://microintel.github.io/Resources/images/mdisk1.jpg',
+    'https://microintel.github.io/Resources/images/mi.png',
+    'https://microintel.github.io/Resources/images/micrOIntel.jpeg',
+    'https://microintel.github.io/Resources/images/microLearn.png',
+    'https://microintel.github.io/Resources/images/microPlay.png',
+    'https://microintel.github.io/Resources/images/microTunes.png',
+    'https://microintel.github.io/Resources/images/microassest.jpg',
+    'https://microintel.github.io/Resources/images/microbdd.jpg',
+    'https://microintel.github.io/Resources/images/microdesk.jpg',
+    'https://microintel.github.io/Resources/images/microdisk.gif',
+    'https://microintel.github.io/Resources/images/microevaluator.jpg',
+    'https://microintel.github.io/Resources/images/microfly.jpg',
+    'https://microintel.github.io/Resources/images/micrography.jpg',
+    'https://microintel.github.io/Resources/images/microhome.jpg',
+    'https://microintel.github.io/Resources/images/microinj.gif',
+    'https://microintel.github.io/Resources/images/microintel tm.jpg',
+    'https://microintel.github.io/Resources/images/microintel.jpg',
+    'https://microintel.github.io/Resources/images/microreach.jpg',
+    'https://microintel.github.io/Resources/images/microresult.jpg',
+    'https://microintel.github.io/Resources/images/microtunes.jpg',
+    'https://microintel.github.io/Resources/images/mihome.png',
+    'https://microintel.github.io/Resources/images/mintel.jpg',
+    'https://microintel.github.io/Resources/images/mpc.jpg',
+    'https://microintel.github.io/Resources/images/mpc1.jpg',
+    'https://microintel.github.io/Resources/images/mpc3.jpg',
+    'https://microintel.github.io/Resources/images/msg.png',
+    'https://microintel.github.io/Resources/images/msoffice.jpg',
+    'https://microintel.github.io/Resources/images/ref.png',
+    'https://microintel.github.io/Resources/images/spybgimg.jpg',
+    'https://microintel.github.io/Resources/images/threads.png',
+    'https://microintel.github.io/Resources/images/timetravel.png',
+    'https://microintel.github.io/Resources/images/window.jpg',
+    'https://microintel.github.io/Resources/images/xox.jpg',
+    'https://microintel.github.io/Resources/images/miblackwhite.png',
+    'https://microintel.github.io/Resources/images/mibrowser.png',
+    'https://microintel.github.io/Resources/images/misearch.png',
+    'https://microintel.github.io/Resources/images/mis1.png',
+    'https://microintel.github.io/Resources/images/mis3.png',
+    'https://microintel.github.io/Resources/images/mis1.gif',
+    'https://microintel.github.io/Resources/images/',
+    'https://microintel.github.io/Resources/images/',
+    'https://microintel.github.io/Resources/images/',
+    'https://microintel.github.io/Resources/images/',
+  ];
+
+  const images= document.getElementById('imag');
+
+  for (const x in imageS) {
+    const imageC= document.createElement('div');
+    imageC.className = 'giii';
+
+    const img = document.createElement('img');
+    img.src = imageS[x];
+
+    imageC.appendChild(img);
+    images.appendChild(imageC);
+  }
+</script>
+
+</body>
+</html>
