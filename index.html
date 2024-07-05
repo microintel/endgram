@@ -1,151 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>microresource</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-  body{
-  margin-left:30px;
-  background-color:#333;
-  }
-    img{
-      width:100%;
-      height:100%;
-      border-radius: 8px;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Gallery</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
 
-    .giii {
-    margin:10px;
-     display:inline-block;
-      width: 270px;
-      height: 200px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition:0.5s;
-      border:1px solid white;
-    }
-    .giii:hover{
-    transform:scale(1.1);
-    }
-    .giii img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    }
-    
-  </style>
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1 style="color:white;"><b><u>MICROINTEL IMAGE RESOURCES</u></b></h1><br>
-<div id="imag"></div>
+    <div class="gallery" id="gallery"></div>
 
-<script>
-  const imageS = [
-    'https://microintel.github.io/Resources/images/Baby_groot.jpg',
-    'https://microintel.github.io/Resources/images/DBMI.png',
-    'https://microintel.github.io/Resources/images/DTE.jpg',
-    'https://microintel.github.io/Resources/images/DTECH.jpg',
-    'https://microintel.github.io/Resources/images/Github.jpg',
-    'https://microintel.github.io/Resources/images/MCU.jpg',
-    'https://microintel.github.io/Resources/images/MICROINTEL_GT.png',
-    'https://microintel.github.io/Resources/images/MICROINTEL TOOTHPASTE.jpg',
-    'https://microintel.github.io/Resources/images/Microintel1.jpg',
-    'https://microintel.github.io/Resources/images/WhatsApp.png',
-    'https://microintel.github.io/Resources/images/babygrrot.jpg',
-    'https://microintel.github.io/Resources/images/call.png',
-    'https://microintel.github.io/Resources/images/ceo.jpg',
-    'https://microintel.github.io/Resources/images/client.jpg',
-    'https://microintel.github.io/Resources/images/dbmil1.png',
-    'https://microintel.github.io/Resources/images/dwn.png',
-    'https://microintel.github.io/Resources/images/giphy.gif',
-    'https://microintel.github.io/Resources/images/gmail.png',
-    'https://microintel.github.io/Resources/images/group.jpg',
-    'https://microintel.github.io/Resources/images/home.gif',
-    'https://microintel.github.io/Resources/images/house.gif',
-    'https://microintel.github.io/Resources/images/insta.png',
-    'https://microintel.github.io/Resources/images/house.png',
-    'https://microintel.github.io/Resources/images/loop.gif',
-    'https://microintel.github.io/Resources/images/lout.png',
-    'https://microintel.github.io/Resources/images/mdisk.jpg',
-    'https://microintel.github.io/Resources/images/mdisk1.jpg',
-    'https://microintel.github.io/Resources/images/mi.png',
-    'https://microintel.github.io/Resources/images/micrOIntel.jpeg',
-    'https://microintel.github.io/Resources/images/microLearn.png',
-    'https://microintel.github.io/Resources/images/microPlay.png',
-    'https://microintel.github.io/Resources/images/microTunes.png',
-    'https://microintel.github.io/Resources/images/microassest.jpg',
-    'https://microintel.github.io/Resources/images/microbdd.jpg',
-    'https://microintel.github.io/Resources/images/microdesk.jpg',
-    'https://microintel.github.io/Resources/images/microdisk.gif',
-    'https://microintel.github.io/Resources/images/microevaluator.jpg',
-    'https://microintel.github.io/Resources/images/microfly.jpg',
-    'https://microintel.github.io/Resources/images/micrography.jpg',
-    'https://microintel.github.io/Resources/images/microhome.jpg',
-    'https://microintel.github.io/Resources/images/microinj.gif',
-    'https://microintel.github.io/Resources/images/microintel tm.jpg',
-    'https://microintel.github.io/Resources/images/microintel.jpg',
-    'https://microintel.github.io/Resources/images/microreach.jpg',
-    'https://microintel.github.io/Resources/images/microresult.jpg',
-    'https://microintel.github.io/Resources/images/microtunes.jpg',
-    'https://microintel.github.io/Resources/images/mihome.png',
-    'https://microintel.github.io/Resources/images/mintel.jpg',
-    'https://microintel.github.io/Resources/images/mpc.jpg',
-    'https://microintel.github.io/Resources/images/mpc1.jpg',
-    'https://microintel.github.io/Resources/images/mpc3.jpg',
-    'https://microintel.github.io/Resources/images/msg.png',
-    'https://microintel.github.io/Resources/images/msoffice.jpg',
-    'https://microintel.github.io/Resources/images/ref.png',
-    'https://microintel.github.io/Resources/images/spybgimg.jpg',
-    'https://microintel.github.io/Resources/images/threads.png',
-    'https://microintel.github.io/Resources/images/timetravel.png',
-    'https://microintel.github.io/Resources/images/window.jpg',
-    'https://microintel.github.io/Resources/images/xox.jpg',
-    'https://microintel.github.io/Resources/images/miblackwhite.png',
-    'https://microintel.github.io/Resources/images/mibrowser.png',
-    'https://microintel.github.io/Resources/images/misearch.png',
-    'https://microintel.github.io/Resources/images/mis1.png',
-    'https://microintel.github.io/Resources/images/mis3.png',
-    'https://microintel.github.io/Resources/images/mis1.gif',
-    'https://microintel.github.io/Resources/images/mjio.jpg',
-    'https://microintel.github.io/Resources/images/office.jpg',
-    'https://microintel.github.io/Resources/images/devs.jpg',
-    'https://microintel.github.io/Resources/images/e1.jpg',
-    'https://microintel.github.io/Resources/images/e2.jpg',
-    'https://microintel.github.io/Resources/images/e3.jpg',
-    'https://microintel.github.io/Resources/images/e4.jpg',
-    'https://microintel.github.io/Resources/images/guido.jpg',
-    'https://microintel.github.io/Resources/images/devs.jpg',
-    'https://microintel.github.io/Resources/images/devss.jpg',
-    'https://microintel.github.io/Resources/images/dheenu.jpg',
-    'https://microintel.github.io/Resources/images/guided.jpg',
-    'https://microintel.github.io/Resources/images/marvelsous.jpg',
-    'https://microintel.github.io/Resources/images/micro taz.jpg',
-    'https://microintel.github.io/Resources/images/nun.jpg',
-    'https://microintel.github.io/Resources/images/thor.jpg',
-    'https://microintel.github.io/Resources/images/tictactoe.jpg',
-    'https://microintel.github.io/Resources/images/tony.jpg',
-    'https://microintel.github.io/Resources/images/XOX logic.jpg',
-    'https://microintel.github.io/Resources/images/dom1.png',
-'https://microintel.github.io/Resources/images/dom2.png',
-'https://microintel.github.io/Resources/images/dom3.png',
-'https://microintel.github.io/Resources/images/dom4.png',
-'https://microintel.github.io/Resources/images/dom6.png',
-'https://microintel.github.io/Resources/images/domser.png'
-  ];
+    <script>
+        async function fetchImages() {
+                const response = await fetch('https://api.github.com/repos/microintel/Resources/contents/images');
+                const data = await response.json();
+                const imageUrls = [];
+                for (let i = 0; i < data.length; i++) {
+                    imageUrls.push(data[i].download_url);
+                }
+                return imageUrls;
+        }
 
-  const images= document.getElementById('imag');
+        async function createGallery() {
+            const galleryElement = document.getElementById('gallery');
+            const imageUrls = await fetchImages();
 
-  for (const x in imageS) {
-    const imageC= document.createElement('div');
-    imageC.className = 'giii';
+            for (let i = 0; i < imageUrls.length; i++) {
+                const imgElement = document.createElement('img');
+                imgElement.src = imageUrls[i];
+                galleryElement.appendChild(imgElement);
+            }
+        }
 
-    const img = document.createElement('img');
-    img.src = imageS[x];
-
-    imageC.appendChild(img);
-    images.appendChild(imageC);
-  }
-</script>
-
+        createGallery();
+    </script>
 </body>
 </html>
