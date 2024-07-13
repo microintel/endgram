@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Loading...</title>
+<style type="text/css">
+
+body{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	background-color:black;
+	justify-content: center;
+	align-items: center;
+	color:white;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 42px;
+}
+span{
+	margin: 0px;
+	line-height: .9;
+	text-shadow:white;
+	animation: span 3s ease-in infinite alternate;
+}
+.main{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+  
+  	
+	@media(max-width: 600px){ transform: scale(.65); }
+}
+.letter{
+	display: inline-flex;
+	height: 32px;
+	width: 27px;
+	color:red;
+	border: 2.35px solid red;
+	border-radius: 28px;
+	animation: letter 2s ease-in-out infinite alternate;
+}
+@keyframes span {
+	0%,30%{ margin: 0 15px; }
+	70%,100%{ margin: 0 5px; }
+}
+@keyframes letter {
+	0%,30%{ width: 27px; }
+	70%,100%{ width: 30vw; }
+}</style>
+</head>
+<body>
+
+<div class="main">
+	<span>C</span>
+	<span class="letter"></span>
+	<span>D</span>
+	<span>I</span>
+	<span>N</span>
+	<span>G...</span>
+</body></html>
