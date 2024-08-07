@@ -356,6 +356,7 @@ let fetd= await fetch("https://api.github.com/repos/microintel/Resources/content
 let con=await fetd.json();
 
 let imglike=con[20]["download_url"];
+  let imgdown=con[20]["name"];
 let imgnam=con[20]["name"].replaceAll('.jpg',"_");
 let shha=con[20]["sha"];
 let xxd=`
@@ -373,7 +374,7 @@ let xxd=`
 <div><span><img src="https://img.icons8.com/?size=100&id=87&format=png&color=FFFFFF" width="25px" height="25px"></span><span><img style="border-radius:1px;" src="https://img.icons8.com/?size=100&id=HtMJD4UUPVM3&format=png&color=FFFFFF" width="25px" height="25px"></span><span><img style="border-radius:1px;" src="https://img.icons8.com/?size=100&id=12582&format=png&color=FFFFFF" width="21px" height="21px"></span>
 </div>
 
-<a href="${imgnam}" download><span><img src="https://img.icons8.com/?size=100&id=gbp6jdMV7Uzb&format=png&color=FFFFFF" width="25px" height="25px"></span></a>
+<a href="${imgdown}" download><span><img src="https://img.icons8.com/?size=100&id=gbp6jdMV7Uzb&format=png&color=FFFFFF" width="25px" height="25px"></span></a>
 </div>
 
 <div class="det">
