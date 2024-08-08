@@ -34,6 +34,7 @@ document.getElementById('cmts').src="https://img.icons8.com/?size=100&id=2837&fo
 }
 
 
+let infi=10000;
 async function loadimg(){
 let fetd= await fetch("https://api.github.com/repos/microintel/Resources/contents/photo");
 let con=await fetd.json();
@@ -85,7 +86,7 @@ let xxd=`
 <div><span style="opacity:1.0;"><img style="opacity:1.0;" src="https://img.icons8.com/?size=100&id=87&format=png&color=FFFFFF" width="25px" onclick="this.src='https://img.icons8.com/?size=100&id=uG-gOKWvvi8T&format=png&color=000000'" height="25px"></span><span><img style="border-radius:1px;" src="https://img.icons8.com/?size=100&id=HtMJD4UUPVM3&format=png&color=FFFFFF" width="25px" height="25px"></span><span><img style="border-radius:1px;" src="https://img.icons8.com/?size=100&id=12582&format=png&color=FFFFFF" name="${imglike}" onclick="navigator.share({url:this.name});" width="21px" height="21px"></span>
 </div>
 
-<a href="${imgdown}" download><span><img src="https://img.icons8.com/?size=100&id=gbp6jdMV7Uzb&format=png&color=FFFFFF" onclick="this.src='https://img.icons8.com/?size=100&id=7690&format=png&color=FA5252'" width="25px" height="25px"></span></a>
+<a href="${imgnam}" download><span><img src="https://img.icons8.com/?size=100&id=gbp6jdMV7Uzb&format=png&color=FFFFFF" onclick="this.src='https://img.icons8.com/?size=100&id=7690&format=png&color=FA5252'" width="25px" height="25px"></span></a>
 </div>
 
 <div class="det">
@@ -99,6 +100,13 @@ pa.innerHTML =xxd;
 document.getElementById("postt").appendChild(pa);
 //document.getElementById("postt").innerHTML+=xxd;
 
+}
+
+
+if(!infi==0){
+
+loadimg();
+infi=infi-1;
 }
 
 }
