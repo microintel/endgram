@@ -172,3 +172,23 @@ color:white;
 width:37px;
 font-weight:bold;
 }
+
+
+@media (min-width:720px){
+#po img{
+
+min-width:300px;
+min-height:200px;
+max-width:300px;
+max-height:200px;
+}
+
+.ddd{
+
+min-width:400px;
+min-height:250px;
+
+}
+
+}
+
