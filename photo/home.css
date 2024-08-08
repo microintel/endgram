@@ -233,3 +233,21 @@ color:white;
 gap:50px;
 }
 
+#vvv{
+
+max-width:330px;
+max-height:200px;
+}
+
+@media (min-width:720px){
+
+#vvv{
+
+min-width:760px;
+min-height:550px;
+}
+.post{
+
+min-width:580px;
+}
+}
