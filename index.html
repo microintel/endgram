@@ -88,54 +88,7 @@
     </div>
 
     <script>
-        async function fetchImages() {
-            try {
-                const response = await fetch('https://api.github.com/repos/microintel/Resources/contents/images');
-                const data = await response.json();
-                const imageUrls = [];
-                for (let i = 0; i < data.length; i++) {
-                    imageUrls.push(data[i].download_url);
-                }
-                return imageUrls;
-            } catch (error) {
-                console.error('Error fetching images:', error);
-                return [];
-            }
-        }
-
-        async function createGallery() {
-            const galleryElement = document.getElementById('gallery');
-            const imageUrls = await fetchImages();
-
-            imageUrls.forEach(url => {
-                const imgElement = document.createElement('img');
-                imgElement.src = url;
-                imgElement.addEventListener('click', function() {
-                    openModal(url);
-                });
-                galleryElement.appendChild(imgElement);
-            });
-        }
-
-        function openModal(url) {
-            const modal = document.getElementById('myModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.style.display = 'block';
-            modalImg.src = url;
-
-            // Close the modal when clicking on the close button or outside the modal content
-            const closeBtn = document.getElementsByClassName('close')[0];
-            closeBtn.onclick = function() {
-                modal.style.display = 'none';
-            };
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            };
-        }
-
-        createGallery();
+        location.href="https://microintel.github.io/Resources/photo/";
     </script>
 </body>
 </html>
