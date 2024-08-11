@@ -1,5 +1,5 @@
 async function sloadimg(){
-let fetd= await fetch("https://api.github.com/repos/microintel/Resources/contents/photo");
+let fetd= await fetch("https://api.github.com/repos/microintel/endgram/contents/photo");
 let con=await fetd.json();
 
 const max = parseInt(con.length-2);;
