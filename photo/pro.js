@@ -1,5 +1,5 @@
 async function sloadimg(){
-let fetd= await fetch("https://api.github.com/repos/microintel/Resources/contents/photo");
+let fetd= await fetch("https://api.github.com/repos/microintel/endgram/contents/photo");
 
 let con=await fetd.json();
 let ranN=await Math.floor(Math.random()*parseInt(con.length));
