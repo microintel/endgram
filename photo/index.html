@@ -1,58 +1,65 @@
-
-<html lang="en"> 
+<html> 
 <head> 
-  <meta name="viewport" content= "width=device-width,initial-scale=1.0" /> 
-    <title>Endgram</title> 
-    <style> 
-        body { 
-        color:white;
-        background-color:black; 
-        } 
-    .end{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:80vh;
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" /> 
+  <title>Endgram</title> 
+  <style> 
+    body { 
+      color: white;
+      background-color: black; 
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+    } 
+    
+    .end {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
     }
-        h1,h3{ 
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            top:50%;
-            font-size: 40px; 
-            font-family: Arial, Helvetica, sans-serif; 
-            background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44); 
-            -webkit-text-fill-color: transparent; 
-            -webkit-background-clip: text; 
-        } 
-        h5,h3{
-        margin:4px;
-        }
-        
-        
-    </style> 
+
+    .fm {
+      display: flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    h1 img, .fm img {
+      width: 200px;
+      height: 80px;
+    }
+    
+    @media (min-width: 700px) {
+      h1 img, .fm img {
+        width: 200px;
+        height: 80px;
+      }
+    }
+  </style> 
 </head> 
 
 <body>
-<center>
-<div class="end">
-    <h1>Endgram</h1>
-</div><br><br>
-<div class="fm">
-<h5>from</h5>
-<h3 style="font-size:18px;">MICROINTEL</h3>
-</div>
-</center>
-<script>
-const myTimeout = setTimeout(myGreeting, 2300);
-
-function myGreeting() {
+<br><br><br><br><br><br><br><br><br><br>
+  <div class="end">
+    <h1><img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/endgram%20gradient%202-min.png"></h1>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br>
+  <div class="fm">
+    <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/from%20microintel%20endgame%206-min.png">
+  </div>
+  
+  
+  <script>
+  setTimeout(cc, 2300);
+  
+  function cc() {
   location.href="home.html";
-}
-</script>
+  }
+  </script>
 </body> 
-
-</html> 
-
-
-
+</html>
