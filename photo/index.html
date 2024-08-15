@@ -1,65 +1,93 @@
-<html> 
-<head> 
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" /> 
-  <title>Endgram</title> 
-  <style> 
-    body { 
-      color: white;
-      background-color: black; 
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      
-    } 
-    
-    .end {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 1;
-    }
+<html>
+<head>
+<title>endgram</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0" /> 
+  <style type="text/css">
+  body {
+    background-color: black;
+    margin: 0;
+  }
+  
+  
 
-    .fm {
-      display: flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    
-    h1 img, .fm img {
-      width: 200px;
-      height: 80px;
-    }
-    
-    @media (min-width: 700px) {
-      h1 img, .fm img {
-        width: 200px;
-        height: 80px;
-      }
-    }
-  </style> 
-</head> 
+  .loader {
+    margin: 0px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 35%, #d47d61 70%);
+    box-sizing: border-box;
+    animation: rotation 0.9s linear infinite;
+  }
+
+  .loader::after {
+    margin: 0px;
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: black;
+  }
+
+  @keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg)}
+  }
+
+  h1 img, .bot img {
+    width: 200px;
+    height: 80px;
+    margin: 0px;
+  }
+
+  .bot {
+    position:fixed;
+    bottom: 30px;
+    left: 50%;
+    top:81%;
+    transform: translateX(-50%);
+    z-index:1;
+  }
+  
+.top {
+    position:fixed;
+    bottom: 30px;
+    left: 50%;
+    top:26%;
+    transform: translateX(-50%);
+    z-index:1;
+  }
+  </style>
+
+</head>
 
 <body>
-<br><br><br><br><br><br><br><br><br><br>
-  <div class="end">
-    <h1><img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/endgram%20gradient%202-min.png"></h1>
-  </div>
-  <br><br><br><br><br><br><br><br><br><br>
-  <div class="fm">
-    <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/from%20microintel%20endgame%206-min.png">
-  </div>
-  
-  
+  <center>
+    <div class="top">
+      <h1><img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/endgram%20gradient%202-min.png"></h1>
+      <center> <span class="loader"></span></center>
+    </div>
+   
+    <div class="bot">
+      <img src="https://raw.githubusercontent.com/microintel/endgram/main/photo/from%20microintel%20endgame%206-min.png">
+    </div>
+  </center>
+
   <script>
-  setTimeout(cc, 2300);
+   setTimeout(red,2500);
+   
+   function red() {
+   location.href="home.html";
+   }
   
-  function cc() {
-  location.href="home.html";
-  }
   </script>
-</body> 
+
+</body>
 </html>
