@@ -132,3 +132,17 @@ padding:5px;
 #imm{
 max-height:450px;
 }
+
+#ddddi{
+
+columns:3 100px;
+column-gap:5px;
+//height:94%;
+//overflow-y:scroll;
+}
+
+img{
+display:block;
+width:100%;
+
+}
