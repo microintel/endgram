@@ -145,6 +145,31 @@ animation:blihe 0.4s ease;
 100{transform:scale(1.0);}
 }
 
+
+
+
+#blht{
+display:none;
+position:absolute;
+top:35%;
+left:33%;
+z-index:500;
+color:white;
+animation:blihee 0.6s;
+}
+
+@keyframes blihee{
+0%{
+transform:scale(0.1);
+color:red;
+}
+
+50%{transform:scale(1.5);color:red;}
+
+100{transform:scale(0.1);color:red;}
+}
+
+
 .bi-chat:hover, .bi-send:hover{
 color:red;
 animation:blihe 0.4s ease;
@@ -233,4 +258,3 @@ blockquote {
 }
 
 }
-

@@ -43,8 +43,8 @@ let ranProMu=cxc1.results[0]["login"]["username"];
 let ranProPo=cxc1.results[0]["name"]["last"];
 
 let xxd=`
-<div class="bdimg">
-<img class="rimg" src="${imglikee}" loading="lazy">
+<div  ondblclick="ccvvi()" class="bdimg">
+<img class="rimg"  src="${imglikee}" loading="lazy">
 </div>
       <div class="lcs">
       <i class="bi bi-heart-fill" style="font-size: 1.5rem;border-radius: 50%; padding:6px;filter: drop-shadow(2 -6mm 4mm black);"></i><i class="bi bi-chat" style="font-size: 1.5rem;"></i><i class="bi bi-send" onclick="navigator.share({title:'from Endgram',url:this.title});" title="${imglikee}" style="font-size: 1.5rem;"></i><i class="bi bi-three-dots-vertical" style="font-size: 1.5rem;"></i><img src="${imglikee}">
@@ -100,3 +100,41 @@ sloadimg();
       
       
       */
+      
+      
+      /*
+      .bi-heart-fill:hover{
+      color:red;
+      animation:blihe 0.4s ease;
+      }
+      
+      @keyframes blihe{
+      0%{transform:scale(1.0);}
+      
+      50%{transform:scale(1.4);}
+      
+      100{transform:scale(1.0);}
+      }
+      */
+      function ccvvi(){
+      
+      document.getElementById("blht").style.display="block";
+      setTimeout(()=>{
+      document.getElementById("blht").style.display="none";
+      },500);
+      
+      }
+      
+      function cvi(x){
+      let cnofi=document.getElementById("vii");
+      if(x=='h'){
+      if(cnofi.className=="bi bi-volume-mute"){
+      cnofi.className="bi bi-volume-up";
+      }
+      else{
+      cnofi.className="bi bi-volume-mute";
+      }
+      }
+      }
+      
+      cvi();
