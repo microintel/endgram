@@ -120,94 +120,85 @@ display:none;
 
 
 <script type="text/javascript">
+async function rl() {
+  let ff = await fetch("https://api.github.com/repos/microintel/endgram/contents/audio/30S");
+  let xx = await ff.json();
+  let xim = await fetch("https://api.github.com/repos/microintel/endgram/contents/photo");
+  let imgX = await xim.json();
 
-async function reell(){
+  for (let x = 0; x < xx.length; x++) {
+    let ausrc = xx[x]["download_url"];
+    let ranI = Math.floor(Math.random() * parseInt(xx.length));
+    let iU = imgX[ranI]["download_url"];
+    let stu = `
+      <img src="${iU}" alt="loading" loading="lazy">
+      <audio src="${ausrc}"></audio>
+    `;
+    let d = document.createElement("div");
+    d.className = "audchild";
+    d.innerHTML = stu;
 
-let ff= await fetch("https://api.github.com/repos/microintel/endgram/contents/audio/30S");
-let xx= await ff.json();
-let xim = await fetch("https://api.github.com/repos/microintel/endgram/contents/photo");
-let imgX= await xim.json();
+    document.getElementById("audaudparr").appendChild(d);
+  }
 
-//let ra = await fetch("https://picsum.photos/200/300?grayscale");
-
-
-
-
-for(let x=0;x<xx.length;x++){
-
-let ausrc= xx[x]["download_url"];
-
-let ranI= Math.floor(Math.random() * parseInt(xx.length));
-let iU= imgX[ranI]["download_url"];
-let stu=`
-
-<img src="${iU}" alt="loading" loading="lazy">
-<audio src="${ausrc}"></audio>
-
-`;
-let xxx= document.createElement("div");
-xxx.className="audchild";
-xxx.innerHTML=stu;
-
-document.getElementById("audaudparr").appendChild(xxx);
+  hnd();
 }
+rl();
 
-han();
-}
-reell();
+function hnd() {
+  let p = document.getElementById("audaudparr");
+  let c = p.querySelectorAll(".audchild");
 
+  let opt = {
+    root: null,
+    threshold: 0.7
+  };
 
-function han(){
+  let cau = null;
 
-let p = document.getElementById("audaudparr");
-let c = p.querySelectorAll(".audchild");
-
-let opt = {
-  root: null,
-  threshold: 0.7
-};
-
-let cau = null;
-
-function cal(ent) {
-  ent.forEach((em) => {
-    let au = em.target.querySelector("audio");
-    if (!em.isIntersecting && cau === au) {
-      au.pause();
-    }
-  });
-}
-
-c.forEach((el) => {
-  let au = el.querySelector("audio");
-  
-  el.addEventListener("click", () => {
-    if (au.paused) {
-      if (cau && cau !== au) {
-        cau.pause();
-        cau.currentTime = 0;
+  function cal(ent) {
+    ent.forEach((em) => {
+      let au = em.target.querySelector("audio");
+      if (em.isIntersecting) {
+        if (cau && cau !== au) {
+          cau.pause();
+          cau.currentTime = 0;
+        }
+        au.play();
+        cau = au;
+      } else {
+        if (au === cau) {
+          au.pause();
+          cau = null;
+        }
       }
-      au.currentTime = 0;
-      au.play();
-      cau = au;
-    } else {
-      au.pause();
-      cau = null;
-    }
+    });
+  }
+
+  c.forEach((el) => {
+    let au = el.querySelector("audio");
+
+    el.addEventListener("click", () => {
+      if (au.paused) {
+        if (cau && cau !== au) {
+          cau.pause();
+          cau.currentTime = 0;
+        }
+        au.currentTime = 0;
+        au.play();
+        cau = au;
+      } else {
+        au.pause();
+        cau = null;
+      }
+    });
   });
-});
 
-let obs = new IntersectionObserver(cal, opt);
-c.forEach((el) => {
-  obs.observe(el);
-});
-
-
+  let obs = new IntersectionObserver(cal, opt);
+  c.forEach((el) => {
+    obs.observe(el);
+  });
 }
-
-
-
-
 </script>
 </body>
 </html>
