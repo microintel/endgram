@@ -58,7 +58,7 @@ gap:10px;
 .relda{
 background-color:transparent;
 position:absolute;
-top:75vh;
+top:71vh;
 left:1%;
 padding:2px;
 }
@@ -70,7 +70,7 @@ display:flex;
 height:40%;
 width:9%;
 flex-direction:column;
-bottom:0%;
+bottom:8%;
 right:2%;
 gap:5%;
 justify-content:space-around;
