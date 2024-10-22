@@ -92,7 +92,7 @@ setTimeout(()=>{
 let p = document.getElementById("reeel");
 
 let c = p.querySelectorAll(".bdimg");
-alert(c[0].innerHTML);
+
 let opt = {
   root: null,
   threshold: 0.7
