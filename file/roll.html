@@ -1,0 +1,213 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>roll</title>
+<style type="text/css">
+
+body {
+    background: radial-gradient(circle at center, #1a1a1a, #000000 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.audpar {
+    position: relative;
+    width: 80%;
+    height: 80vh;
+    padding: 20px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    z-index: 70;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.audchild {
+    margin: 10px;
+    padding: 20px;
+    height: 95%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fly 0.6s ease-out;
+    
+}
+
+img {
+background-image:url('1uUh.gif');
+background-repeat:no-repeat;
+background-size:cover;
+    max-width: 90%;
+    max-height: 90%;
+    
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+audio {
+    margin-top: 15px;
+    outline: none;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h4 {
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    z-index: 100;
+    padding: 8px;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s;
+}
+
+h4:hover {
+    color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 240, 255, 0.5);
+}
+
+
+audio{
+
+display:none;
+}
+</style>
+</head>
+
+<body>
+<h4>Roll</h4>
+<div id="audaudparr" class="audpar">
+    
+</div>
+
+
+
+<script type="text/javascript">
+
+async function reell(){
+
+let ff= await fetch("https://api.github.com/repos/microintel/endgram/contents/audio/30S");
+let xx= await ff.json();
+let xim = await fetch("https://api.github.com/repos/microintel/endgram/contents/photo");
+let imgX= await xim.json();
+
+//let ra = await fetch("https://picsum.photos/200/300?grayscale");
+
+
+
+
+for(let x=0;x<xx.length;x++){
+
+let ausrc= xx[x]["download_url"];
+
+let ranI= Math.floor(Math.random() * parseInt(xx.length));
+let iU= imgX[ranI]["download_url"];
+let stu=`
+
+<img src="${iU}" alt="loading" loading="lazy">
+<audio src="${ausrc}"></audio>
+
+`;
+let xxx= document.createElement("div");
+xxx.className="audchild";
+xxx.innerHTML=stu;
+
+document.getElementById("audaudparr").appendChild(xxx);
+}
+
+han();
+}
+reell();
+
+
+function han(){
+
+let p = document.getElementById("audaudparr");
+let c = p.querySelectorAll(".audchild");
+
+let opt = {
+  root: null,
+  threshold: 0.7
+};
+
+let cau = null;
+
+function cal(ent) {
+  ent.forEach((em) => {
+    let au = em.target.querySelector("audio");
+    if (!em.isIntersecting && cau === au) {
+      au.pause();
+    }
+  });
+}
+
+c.forEach((el) => {
+  let au = el.querySelector("audio");
+  
+  el.addEventListener("click", () => {
+    if (au.paused) {
+      if (cau && cau !== au) {
+        cau.pause();
+        cau.currentTime = 0;
+      }
+      au.currentTime = 0;
+      au.play();
+      cau = au;
+    } else {
+      au.pause();
+      cau = null;
+    }
+  });
+});
+
+let obs = new IntersectionObserver(cal, opt);
+c.forEach((el) => {
+  obs.observe(el);
+});
+
+
+}
+
+
+
+
+</script>
+</body>
+</html>
