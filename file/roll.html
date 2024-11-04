@@ -230,10 +230,7 @@ function hnd() {
         if (cau && cau !== au) {
           cau.pause();
           cau.currentTime = 0;
-          let xxx=document.getElementsByTagName("img");
-          for(let x=0;x<xxx.length;x++){
-          document.getElementsByTagName("img")[x].style.animation="60s rot infinite";
-          }
+          
         }
         au.play();
         cau = au;
@@ -241,10 +238,7 @@ function hnd() {
         if (au === cau) {
           au.pause();
           cau = null;
-          let xx=document.getElementsByTagName("img");
-          for(let x=0;x<xx.length;x++){
-          document.getElementsByTagName("img")[x].style.animation="";
-          }
+          
           //document.getElementsByTagName("img")[0].style.animation="";
         }
       }
