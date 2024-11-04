@@ -127,9 +127,10 @@ async function rl() {
   let imgX = await xim.json();
 
   for (let x = 0; x < xx.length; x++) {
-    let ausrc = xx[x]["download_url"];
+    
     let ranI = Math.floor(Math.random() * parseInt(xx.length));
     let iU = imgX[ranI]["download_url"];
+    let ausrc=xx[ranI]["download_url"];
     let stu = `
       <img src="${iU}" alt="loading" loading="lazy">
       <audio src="${ausrc}"></audio>
