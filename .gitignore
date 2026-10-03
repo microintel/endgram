@@ -1,0 +1,7 @@
+# Build installers
+*.exe
+*.AppImage
+*.deb
+
+# Build output
+dist/
